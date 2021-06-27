@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import "../styles/homepage.css"
 import allComps from "../data/compsArray"
 import pointerImage from "../images/tftPointer2.png"
+import { Helmet } from "react-helmet"
 
 export default function Home() {
   // const divArray = []
@@ -36,6 +37,19 @@ export default function Home() {
 
   return (
     <div>
+      <Helmet>
+        <title>tftrandom</title>
+        <meta
+          name="description"
+          content="Chooses a random tft trait for your tft comp"
+        />
+        <script
+          data-ad-client="ca-pub-2754405234770767"
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+        ></script>
+      </Helmet>
+
       <div className="spinner">
         <img src={pointerImage} className="pointer" alt=""></img>
         <div className="spinItemsContainer">
