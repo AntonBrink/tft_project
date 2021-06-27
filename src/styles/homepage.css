@@ -30,6 +30,26 @@
   min-height: 105px;
 }
 
+.content {
+  padding-bottom: 2.5rem;
+}
+
+.footerClass {
+  position: absolute;
+  bottom: 0;
+  height: 2.5rem;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
+
+.Page {
+  position: relative;
+  min-height: 100vh;
+}
+
 .traitText {
   color: whitesmoke;
   font-weight: bold;
