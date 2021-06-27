@@ -9,6 +9,8 @@ export default function Home() {
   const divArray2 = divArray.concat(allComps)
   const [spinLeft, setSpinLeft] = useState("0px")
   const [yourComp, setYourComp] = useState("")
+  const [btnClass, setBtnClass] = useState("spinBtn")
+  const [btnContainerClass, setBtnContainerClass] = useState("btnContainer")
 
   const myfunction = () => {
     const myRandomNumber = Math.floor(Math.random() * 4600) / 100
@@ -17,33 +19,61 @@ export default function Home() {
     setSpinLeft(randomNumWithPixels)
     const compId = Math.round((newRandomNumber / 100) % 27) + 7
 
-    setYourComp(divArray2[compId])
+    if (yourComp === divArray[compId]) {
+      myfunction()
+    } else {
+      setYourComp(divArray2[compId])
+    }
+
+    setBtnClass("spinBtnFlip")
+    setBtnContainerClass("btnContainerFlip")
+
+    setTimeout(function () {
+      setBtnClass("spinBtn")
+      setBtnContainerClass("btnContainer")
+    }, 1100)
   }
 
   return (
     <div>
-      Hello world!
       <div className="spinner">
-        <img src={pointerImage} className="pointer"></img>
+        <img src={pointerImage} className="pointer" alt=""></img>
         <div className="spinItemsContainer">
           {divArray2.map(comp => {
             return (
-              <div className="spinItem" style={{ left: spinLeft }}>
-                {comp.name}
+              <div
+                className="spinItem"
+                style={{
+                  left: spinLeft,
+                  backgroundImage: `radial-gradient(circle, ${comp.colors})`,
+                }}
+              >
+                <img src={comp.img} className="traitImg" alt="" />
+                <div className="traitText">
+                  {comp.name}({comp.compsize}){console.log(comp.img)}
+                </div>
               </div>
             )
           })}
         </div>
       </div>
-      <button
-        onClick={() => {
-          myfunction()
-        }}
-        className="spinBtn"
-      >
-        Spin!
-      </button>
-      <h1>Your Comp is {yourComp.name}</h1>
+
+      <h1 className="compReveal">
+        {yourComp.name
+          ? "Your Comp should include the " + yourComp.name + " trait"
+          : "Spin to get your random trait!"}
+      </h1>
+
+      <div className={btnContainerClass}>
+        <button
+          onClick={() => {
+            myfunction()
+          }}
+          className={btnClass}
+        >
+          Spin!
+        </button>
+      </div>
     </div>
   )
 }
