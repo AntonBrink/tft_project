@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import "../styles/homepage.css"
 import allComps from "../data/compsArray"
-import pointerImage from "../images/tftPointer2.png"
+import pointerImage from "../images/tftPenguinSmall.png"
 import { Helmet } from "react-helmet"
 
 export default function Home() {
