@@ -5,7 +5,6 @@ import pointerImage from "../images/tftPenguinSmall.png"
 import { Helmet } from "react-helmet"
 
 export default function Home() {
-  // const divArray = []
   const divArray = allComps.concat(allComps)
   const divArray2 = divArray.concat(allComps)
   const [spinLeft, setSpinLeft] = useState("0px")
@@ -17,8 +16,6 @@ export default function Home() {
   const myfunction = () => {
     let myRandomNumber = Math.floor(Math.random() * 4600) / 100
 
-    console.log(window.innerWidth)
-
     let pixelAdjust = 0
 
     if (window.innerWidth < 1200) {
@@ -29,7 +26,6 @@ export default function Home() {
     const spinnerWidth = window.innerWidth * 0.8
     let spinnerAdjust = spinnerWidth / 2 / 100
     spinnerAdjust = (Math.floor(spinnerAdjust) * 100) / 100
-    console.log(spinnerAdjust)
 
     const newRandomNumber = Math.round(myRandomNumber) * 100 + pixelAdjust
     const randomNumWithPixels = "-" + newRandomNumber + "px"
@@ -61,11 +57,6 @@ export default function Home() {
           name="description"
           content="Chooses a random tft trait for your tft comp"
         />
-        <script
-          data-ad-client="ca-pub-2754405234770767"
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-        ></script>
       </Helmet>
       <div className="content">
         <div className="spinner">
