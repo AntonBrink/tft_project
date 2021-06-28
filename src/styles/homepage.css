@@ -25,6 +25,47 @@
   height: 150px;
 }
 
+.championsDiv {
+  display: flex;
+  justify-content: space-around;
+}
+
+.outerChampDiv {
+  width: 60vw;
+  margin: auto auto;
+  position: relative;
+
+  background: linear-gradient(
+    to right bottom,
+    rgba(40, 131, 128, 0.25),
+    rgba(40, 131, 128, 0.18) /* rgba(255, 255, 255, 0.2) */
+  );
+  border-radius: 20px;
+  /* border-color: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.6),
+    rgba(255, 255, 255, 0.2)
+  ); */
+
+  border: solid 1px rgba(255, 255, 255, 0.1);
+
+  margin-bottom: 100px;
+}
+
+.champHeader {
+  text-align: center;
+}
+
+.champImg {
+  height: 75px;
+  width: auto;
+}
+
+.champName {
+  text-align: center;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
 html,
 body {
   margin: 0;

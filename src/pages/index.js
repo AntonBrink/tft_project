@@ -80,12 +80,28 @@ export default function Home() {
             })}
           </div>
         </div>
-
         <h1 className="compReveal">
           {yourComp.name && timer !== "done"
             ? "Your Comp should include the " + yourComp.name + " trait"
             : "Spin to get your random trait!"}
         </h1>
+        {yourComp && timer !== "done" ? (
+          <div className="outerChampDiv">
+            <h1 className="champHeader">Champions with this trait</h1>
+            <div className="championsDiv">
+              {yourComp.champions.map(champ => {
+                return (
+                  <div>
+                    <img src={`${champ}.png`} alt="" className="champImg" />
+                    <p className="champName">{champ}</p>
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+        ) : (
+          ""
+        )}
 
         <div className={btnContainerClass}>
           <button
