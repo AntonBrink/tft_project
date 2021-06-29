@@ -62,7 +62,10 @@ export default function Home() {
         <div className="spinner">
           <img src={pointerImage} className="pointer" alt=""></img>
           <div className="spinItemsContainer">
-            {divArray2.map(comp => {
+            {divArray2.map((comp, id) => {
+              let counter = -1
+              counter++
+
               return (
                 <div
                   className="spinItem"
@@ -70,8 +73,15 @@ export default function Home() {
                     left: spinLeft,
                     backgroundImage: `radial-gradient(circle, ${comp.colors})`,
                   }}
+                  key={id}
                 >
-                  <img src={comp.img} className="traitImg" alt="" />
+                  <img
+                    src={comp.img}
+                    className="traitImg"
+                    alt=""
+                    loading={counter > 16 ? "lazy" : ""}
+                    height="105px"
+                  />
                   <div className="traitText">
                     {comp.name}({comp.compsize})
                   </div>
@@ -92,7 +102,13 @@ export default function Home() {
               {yourComp.champions.map(champ => {
                 return (
                   <div>
-                    <img src={`${champ}.png`} alt="" className="champImg" />
+                    <img
+                      src={`${champ}.png`}
+                      alt=""
+                      className="champImg"
+                      height="75px"
+                      width=""
+                    />
                     <p className="champName">{champ}</p>
                   </div>
                 )
