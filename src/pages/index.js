@@ -81,6 +81,7 @@ export default function Home() {
                     alt=""
                     loading={counter > 16 ? "lazy" : ""}
                     height="105px"
+                    width="91"
                   />
                   <div className="traitText">
                     {comp.name}({comp.compsize})
@@ -107,7 +108,7 @@ export default function Home() {
                       alt=""
                       className="champImg"
                       height="75px"
-                      width=""
+                      width="85"
                     />
                     <p className="champName">{champ}</p>
                   </div>
