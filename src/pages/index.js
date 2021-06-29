@@ -96,8 +96,12 @@ export default function Home() {
             ? "Your Comp should include the " + yourComp.name + " trait"
             : "Spin to get your random trait!"}
         </h1>
-        {yourComp && timer !== "done" ? (
-          <div className="outerChampDiv">
+        {yourComp ? (
+          <div
+            className={
+              timer == "done" ? "outerChampDiv" : "outerChampDivNoDisplay"
+            }
+          >
             <h1 className="champHeader">Champions with this trait</h1>
             <div className="championsDiv">
               {yourComp.champions.map(champ => {
