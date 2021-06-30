@@ -99,7 +99,7 @@ export default function Home() {
         {yourComp ? (
           <div
             className={
-              timer == "done" ? "outerChampDiv" : "outerChampDivNoDisplay"
+              timer == "done" ? "outerChampDivNoDisplay" : "outerChampDiv"
             }
           >
             <h1 className="champHeader">Champions with this trait</h1>
