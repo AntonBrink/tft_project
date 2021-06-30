@@ -2,7 +2,7 @@ export const Comps = [
   {
     id: 0,
     name: "Abomination",
-    img: "Abomination.png",
+    img: "Abomination.webp",
     compsize: 5,
     colors: ["green", "limegreen", "black"],
     champions: ["Kallista", "Brand", "Nunu", "Ryze"],
@@ -10,7 +10,7 @@ export const Comps = [
   {
     id: 1,
     name: "Coven",
-    img: "Coven.png",
+    img: "Coven.webp",
     compsize: 3,
     colors: ["rgb(104, 48, 168)", "rgb(90, 25, 163)", "black"],
     champions: ["Lissandra", "Leblanc", "Morgana"],
@@ -18,7 +18,7 @@ export const Comps = [
   {
     id: 2,
     name: "Dawnbringer",
-    img: "Dawnbringer.png",
+    img: "Dawnbringer.webp",
     compsize: 8,
     colors: ["lightblue", "rgb(51, 103, 138)", "black"],
     champions: [
@@ -34,7 +34,7 @@ export const Comps = [
   {
     id: 3,
     name: "Draconic",
-    img: "Draconic.png",
+    img: "Draconic.webp",
     compsize: 5,
     colors: ["rgb(68, 66, 173)", "rgb(48, 47, 145)", "black"],
     champions: ["Udyr", "Sett", "Ashe", "Zyra", "Heimerdinger"],
@@ -42,7 +42,7 @@ export const Comps = [
   {
     id: 4,
     name: "Dragonslayer",
-    img: "Dragonslayer.png",
+    img: "Dragonslayer.webp",
     compsize: 4,
     colors: ["red", "rgb(194, 7, 7)", "black"],
     champions: ["Trundle", "Pantheon", "Diana", "Mordekaiser"],
@@ -50,7 +50,7 @@ export const Comps = [
   {
     id: 5,
     name: "Eternal",
-    img: "Eternal.png",
+    img: "Eternal.webp",
     compsize: 1,
     colors: ["darkgray", "darkgray", "black"],
     champions: ["Kindred"],
@@ -58,7 +58,7 @@ export const Comps = [
   {
     id: 6,
     name: "Forgotten",
-    img: "Forgotten.png",
+    img: "Forgotten.webp",
     compsize: 9,
     colors: ["teal", "teal", "black"],
     champions: [
@@ -76,7 +76,7 @@ export const Comps = [
   {
     id: 7,
     name: "Hellion",
-    img: "Hellion.png",
+    img: "Hellion.webp",
     compsize: 7,
     colors: ["red", "rgb(194, 7, 7)", "black"],
     champions: ["Ziggs", "Kled", "Poppy", "Kennen", "Lulu", "Teemo"],
@@ -84,7 +84,7 @@ export const Comps = [
   {
     id: 8,
     name: "Ironclad",
-    img: "Ironclad.png",
+    img: "Ironclad.webp",
     compsize: 4,
     colors: ["gray", "gray", "black"],
     champions: ["Nautilus", "Rell", "Jax"],
@@ -92,7 +92,7 @@ export const Comps = [
   {
     id: 9,
     name: "Nightbringer",
-    img: "Nightbringer.png",
+    img: "Nightbringer.webp",
     compsize: 8,
     colors: ["darkblue", "rgb(43, 43, 63)", "black"],
     champions: [
@@ -109,7 +109,7 @@ export const Comps = [
   {
     id: 10,
     name: "Redeemed",
-    img: "Redeemed.png",
+    img: "Redeemed.webp",
     compsize: 9,
     colors: ["yellow", "#e1ad01", "black"],
     champions: [
@@ -126,7 +126,7 @@ export const Comps = [
   {
     id: 11,
     name: "Revenant",
-    img: "Revenant.png",
+    img: "Revenant.webp",
     compsize: 4,
     colors: ["rgb(114, 17, 57)", "rgb(99, 11, 48)", "black"],
     champions: ["Nocturne", "Ivern", "Volibear"],
@@ -134,7 +134,7 @@ export const Comps = [
   {
     id: 12,
     name: "Verdant",
-    img: "Verdant.png",
+    img: "Verdant.webp",
     compsize: 4,
     colors: ["green", "limegreen", "black"],
     champions: ["Ashe", "Taric", "Kayle"],
@@ -142,56 +142,56 @@ export const Comps = [
   {
     id: 13,
     name: "Assassin",
-    img: "Assassin.png",
+    img: "Assassin.webp",
     compsize: 6,
     champions: ["KhaZix", "Leblanc", "Katarina", "Nocturne", "Diana", "Viego"],
   },
   {
     id: 14,
     name: "Brawler",
-    img: "Brawler.png",
+    img: "Brawler.webp",
     compsize: 4,
     champions: ["Gragas", "Warwick", "Sett", "Nunu", "Volibear"],
   },
   {
     id: 15,
     name: "Caretaker",
-    img: "Caretaker.png",
+    img: "Caretaker.webp",
     compsize: 1,
     champions: ["Heimerdinger"],
   },
   {
     id: 16,
     name: "Cavalier",
-    img: "Cavalier.png",
+    img: "Cavalier.webp",
     compsize: 4,
     champions: ["Kled", "Hecarim", "Sejuani", "Rell"],
   },
   {
     id: 17,
     name: "Cruel",
-    img: "Cruel.png",
+    img: "Cruel.webp",
     compsize: 1,
     champions: ["Teemo"],
   },
   {
     id: 18,
     name: "God-King",
-    img: "God-King.png",
+    img: "God-King.webp",
     compsize: 1,
     champions: ["Darius", "Garen"],
   },
   {
     id: 19,
     name: "Invoker",
-    img: "Invoker.png",
+    img: "Invoker.webp",
     compsize: 4,
     champions: ["Syndra", "Ivern", "Karma", "Teemo"],
   },
   {
     id: 20,
     name: "Knight",
-    img: "Knight.png",
+    img: "Knight.webp",
     compsize: 6,
     champions: [
       "Leona",
@@ -206,7 +206,7 @@ export const Comps = [
   {
     id: 21,
     name: "Legionnaire",
-    img: "Legionnaire.png",
+    img: "Legionnaire.webp",
     compsize: 8,
     champions: [
       "Aatrox",
@@ -221,28 +221,28 @@ export const Comps = [
   {
     id: 22,
     name: "Mystic",
-    img: "Mystic.png",
+    img: "Mystic.webp",
     compsize: 4,
     champions: ["Lulu", "Morgana", "Lux", "Ryze", "Kindred"],
   },
   {
     id: 23,
     name: "Ranger",
-    img: "Ranger.png",
+    img: "Ranger.webp",
     compsize: 4,
     champions: ["Vayne", "Varus", "Ashe", "Aphelios", "Kindred"],
   },
   {
     id: 24,
     name: "Renewer",
-    img: "Renewer.png",
+    img: "Renewer.webp",
     compsize: 6,
     champions: ["Lissandra", "Vladmir", "Soraka", "Ivern", "Heimerdinger"],
   },
   {
     id: 25,
     name: "Skirmisher",
-    img: "Skirmisher.png",
+    img: "Skirmisher.webp",
     compsize: 9,
     champions: [
       "Udyr",
@@ -258,7 +258,7 @@ export const Comps = [
   {
     id: 26,
     name: "Spellweaver",
-    img: "Spellweaver.png",
+    img: "Spellweaver.webp",
     compsize: 6,
     champions: ["Ziggs", "Brand", "Viktor", "Zyra", "VelKoz"],
   },

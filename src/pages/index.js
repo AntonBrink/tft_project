@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import "../styles/homepage.css"
 import allComps from "../data/compsArray"
-import pointerImage from "../images/tftPenguinSmall.png"
+import pointerImage from "../images/tftPenguinSmall.webp"
 import { Helmet } from "react-helmet"
 
 export default function Home() {
@@ -60,7 +60,13 @@ export default function Home() {
       </Helmet>
       <div className="content">
         <div className="spinner">
-          <img src={pointerImage} className="pointer" alt=""></img>
+          <img
+            src={pointerImage}
+            className="pointer"
+            alt=""
+            height="100"
+            width="100"
+          ></img>
           <div className="spinItemsContainer">
             {divArray2.map((comp, id) => {
               let counter = -1
