@@ -91,12 +91,6 @@ body {
 .Page {
   position: relative;
   min-height: 100vh;
-  background-image: url("../images/SmokeBackground3.jpeg");
-}
-
-.webp.Page {
-  position: relative;
-  min-height: 100vh;
   background-image: url("../images/SmokeBackground3.webp");
 }
 
