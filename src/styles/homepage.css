@@ -1,7 +1,6 @@
 .spinner {
   width: 80vw;
   margin: auto auto;
-
   white-space: nowrap;
   overflow-x: hidden;
   position: relative;
@@ -87,6 +86,12 @@ body {
   margin-right: auto;
   left: 0;
   right: 0;
+}
+
+.webp .Page {
+  position: relative;
+  min-height: 100vh;
+  background-image: url("../images/SmokeBackground3.webp");
 }
 
 .Page {
