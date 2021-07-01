@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import "../styles/homepage.css"
 import allComps from "../data/compsArray"
 import pointerImage from "../images/tftPenguinSmall.webp"
@@ -15,30 +15,33 @@ export default function Home() {
   const [timer, setTimer] = useState("done")
   const [webP, setWebp] = useState("webp")
 
+  useEffect(() => {
+    const check_webp_feature = (feature, callback) => {
+      var kTestImages = {
+        lossy: "UklGRiIAAABXRUJQVlA4IBYAAAAwAQCdASoBAAEADsD+JaQAA3AAAAAA",
+        lossless: "UklGRhoAAABXRUJQVlA4TA0AAAAvAAAAEAcQERGIiP4HAA==",
+        alpha:
+          "UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAARBxAR/Q9ERP8DAABWUDggGAAAABQBAJ0BKgEAAQAAAP4AAA3AAP7mtQAAAA==",
+        animation:
+          "UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA",
+      }
+      var img = new Image()
+      img.onload = function () {
+        var result = img.width > 0 && img.height > 0
+        callback(feature, result)
+      }
+      img.onerror = function () {
+        callback(feature, false)
+      }
+      img.src = "data:image/webp;base64," + kTestImages[feature]
+    }
+    check_webp_feature("lossless", checkFunction)
+  }, [])
+
   const checkFunction = (feature, result) => {
     if (!result) {
       setWebp("")
     }
-  }
-
-  function check_webp_feature(feature, callback) {
-    var kTestImages = {
-      lossy: "UklGRiIAAABXRUJQVlA4IBYAAAAwAQCdASoBAAEADsD+JaQAA3AAAAAA",
-      lossless: "UklGRhoAAABXRUJQVlA4TA0AAAAvAAAAEAcQERGIiP4HAA==",
-      alpha:
-        "UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAARBxAR/Q9ERP8DAABWUDggGAAAABQBAJ0BKgEAAQAAAP4AAA3AAP7mtQAAAA==",
-      animation:
-        "UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA",
-    }
-    var img = new Image()
-    img.onload = function () {
-      var result = img.width > 0 && img.height > 0
-      callback(feature, result)
-    }
-    img.onerror = function () {
-      callback(feature, false)
-    }
-    img.src = "data:image/webp;base64," + kTestImages[feature]
   }
 
   const myfunction = () => {
@@ -85,8 +88,6 @@ export default function Home() {
           name="description"
           content="Chooses a random tft trait for your tft comp"
         />
-
-        {check_webp_feature("lossless", checkFunction)}
       </Helmet>
       <div className="content">
         <div className="spinner">
