@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import "../styles/homepage.css"
 import allComps from "../data/compsArray"
 import pointerImage from "../images/tftPenguinSmall.webp"
+import pointerImagePng from "../images/tftPenguinSmall.png"
 import { Helmet } from "react-helmet"
 
 export default function Home() {
@@ -12,6 +13,33 @@ export default function Home() {
   const [btnClass, setBtnClass] = useState("spinBtn")
   const [btnContainerClass, setBtnContainerClass] = useState("btnContainer")
   const [timer, setTimer] = useState("done")
+  const [webP, setWebp] = useState("webp")
+
+  const checkFunction = (feature, result) => {
+    if (!result) {
+      setWebp("")
+    }
+  }
+
+  function check_webp_feature(feature, callback) {
+    var kTestImages = {
+      lossy: "UklGRiIAAABXRUJQVlA4IBYAAAAwAQCdASoBAAEADsD+JaQAA3AAAAAA",
+      lossless: "UklGRhoAAABXRUJQVlA4TA0AAAAvAAAAEAcQERGIiP4HAA==",
+      alpha:
+        "UklGRkoAAABXRUJQVlA4WAoAAAAQAAAAAAAAAAAAQUxQSAwAAAARBxAR/Q9ERP8DAABWUDggGAAAABQBAJ0BKgEAAQAAAP4AAA3AAP7mtQAAAA==",
+      animation:
+        "UklGRlIAAABXRUJQVlA4WAoAAAASAAAAAAAAAAAAQU5JTQYAAAD/////AABBTk1GJgAAAAAAAAAAAAAAAAAAAGQAAABWUDhMDQAAAC8AAAAQBxAREYiI/gcA",
+    }
+    var img = new Image()
+    img.onload = function () {
+      var result = img.width > 0 && img.height > 0
+      callback(feature, result)
+    }
+    img.onerror = function () {
+      callback(feature, false)
+    }
+    img.src = "data:image/webp;base64," + kTestImages[feature]
+  }
 
   const myfunction = () => {
     let myRandomNumber = Math.floor(Math.random() * 4600) / 100
@@ -50,18 +78,20 @@ export default function Home() {
   }
 
   return (
-    <main className="Page">
+    <main className={`${webP} Page`}>
       <Helmet>
         <title>tftrandom</title>
         <meta
           name="description"
           content="Chooses a random tft trait for your tft comp"
         />
+
+        {check_webp_feature("lossless", checkFunction)}
       </Helmet>
       <div className="content">
         <div className="spinner">
           <img
-            src={pointerImage}
+            src={webP ? pointerImage : pointerImagePng}
             className="pointer"
             alt=""
             height="100"
@@ -82,7 +112,7 @@ export default function Home() {
                   key={id}
                 >
                   <img
-                    src={comp.img}
+                    src={webP === "webp" ? comp.img : comp.name + ".png"}
                     className="traitImg"
                     alt=""
                     loading={counter > 16 ? "lazy" : ""}
@@ -105,7 +135,7 @@ export default function Home() {
         {yourComp ? (
           <div
             className={
-              timer == "done" ? "outerChampDivNoDisplay" : "outerChampDiv"
+              timer === "done" ? "outerChampDivNoDisplay" : "outerChampDiv"
             }
           >
             <h1 className="champHeader">Champions with this trait</h1>
