@@ -27,6 +27,7 @@
 .championsDiv {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .outerChampDiv {
@@ -74,13 +75,13 @@ body {
 }
 
 .content {
-  padding-bottom: 2.5rem;
+  padding-bottom: 4rem;
 }
 
 .footerClass {
   position: absolute;
   bottom: 0;
-  height: 2.5rem;
+  height: 4rem;
   width: fit-content;
   margin-left: auto;
   margin-right: auto;
@@ -92,6 +93,7 @@ body {
   position: relative;
   min-height: 100vh;
   background-image: url("../images/SmokeBackground3.webp");
+  background-repeat: repeat-y;
 }
 
 .traitText {
