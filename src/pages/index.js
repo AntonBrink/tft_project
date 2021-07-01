@@ -94,7 +94,7 @@ export default function Home() {
           <img
             src={webP ? pointerImage : pointerImagePng}
             className="pointer"
-            alt=""
+            alt={"PointerImage"}
             height="100"
             width="100"
           ></img>
@@ -115,7 +115,7 @@ export default function Home() {
                   <img
                     src={webP === "webp" ? comp.img : comp.name + ".png"}
                     className="traitImg"
-                    alt=""
+                    alt={comp.name}
                     loading={counter > 16 ? "lazy" : ""}
                     height="105px"
                     width="91"
@@ -146,7 +146,7 @@ export default function Home() {
                   <div>
                     <img
                       src={`${champ}.png`}
-                      alt=""
+                      alt={champ}
                       className="champImg"
                       height="75px"
                       width="85"
