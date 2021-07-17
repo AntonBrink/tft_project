@@ -90,6 +90,19 @@ export default function Home() {
         />
       </Helmet>
       <div className="content">
+        <header className="mainHeading">
+          <h1>TFTRandom</h1>
+          <h2>A tft randomizer made by Twiggymocha</h2>
+          <h3>HOW IT WORKS</h3>
+          <p>
+            You press the "spin" button. A random trait gets selected, this is
+            indicated below the spinner and also indicated by the penguins sword
+            after the spin is complete. Your tft comp has to include this trait.
+            The champions included in this comp are displayed once the spin is
+            complete.
+          </p>
+        </header>
+
         <div className="spinner">
           <img
             src={webP ? pointerImage : pointerImagePng}
