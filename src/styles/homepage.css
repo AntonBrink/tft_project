@@ -32,6 +32,10 @@
   margin: auto auto;
 }
 
+h1 {
+  margin: 0px 0px;
+}
+
 .championsDiv {
   display: flex;
   justify-content: space-around;
