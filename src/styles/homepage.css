@@ -25,7 +25,7 @@
   text-align: center;
   transition-duration: 2s;
   border-right: solid black 1px;
-  background-image: radial-gradient(circle, fpurple, rgb(219, 51, 219), black);
+  background-image: radial-gradient(circle, purple, rgb(219, 51, 219), black);
   height: 150px;
 }
 
