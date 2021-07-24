@@ -61,7 +61,7 @@ export default function Home() {
     const newRandomNumber = Math.round(myRandomNumber) * 100 + pixelAdjust
     const randomNumWithPixels = "-" + newRandomNumber + "px"
     setSpinLeft(randomNumWithPixels)
-    const compId = Math.round((newRandomNumber / 100) % 27) + spinnerAdjust
+    const compId = Math.round((newRandomNumber / 100) % 26) + spinnerAdjust
 
     if (yourComp === divArray[compId]) {
       myfunction()
@@ -93,6 +93,7 @@ export default function Home() {
         <header className="mainHeading">
           <h1>TFTRandom</h1>
           <h2>A tft randomizer made by Twiggymocha</h2>
+          <h3>Updated for TFT Version 5.5</h3>
           <h3>HOW IT WORKS</h3>
           <p>
             You press the "spin" button. A random trait gets selected, this is
