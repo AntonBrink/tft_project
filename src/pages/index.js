@@ -83,7 +83,9 @@ export default function Home() {
   return (
     <main className={`${webP} Page`}>
       <Helmet>
-        <title>tftrandom</title>
+        <title>
+          TFTRandom Random Comp Generator for TFT Reckoning Patch 11.15
+        </title>
         <meta
           name="description"
           content="Chooses a random tft trait for your tft comp"
