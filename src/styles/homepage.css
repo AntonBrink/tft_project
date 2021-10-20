@@ -114,16 +114,16 @@ body {
 
 .Page {
   position: relative;
-  min-height: 100vh;
+  min-height: 150vh;
   background-image: url("../images/TFTBackground5.5.jpeg");
-  background-repeat: repeat-y;
+  background-repeat: round;
 }
 
 .webp.Page {
   position: relative;
-  min-height: 100vh;
+  min-height: 150vh;
   background-image: url("../images/TFTBackground5.5.webp");
-  background-repeat: repeat-y;
+  background-repeat: round;
 }
 
 .traitText {
