@@ -88,7 +88,7 @@ export default function Home() {
         </title>
         <meta
           name="description"
-          content="Chooses a random tft trait for your tft comp"
+          content="TFTRandom is a random tft comp generator that chooses a random tft trait after pressing the spin button to make the tft randomizer spin through all traits"
         />
       </Helmet>
       <div className="content">

@@ -61,7 +61,7 @@ export const Comps = [
     id: 5,
     name: "Forgotten",
     img: "Forgotten.webp",
-    compsize: 9,
+    compsize: 8,
     colors: ["teal", "teal", "black"],
     champions: [
       "Vayne",
