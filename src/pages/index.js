@@ -54,6 +54,11 @@ export default function Home() {
       console.log("occurs")
     }
 
+    if (window.innerWidth == 425) {
+      pixelAdjust = 0
+      console.log("occurs")
+    }
+
     const spinnerWidth = window.innerWidth * 0.8
     let spinnerAdjust = spinnerWidth / 2 / 100
     spinnerAdjust = (Math.floor(spinnerAdjust) * 100) / 100
