@@ -8,13 +8,111 @@
   src: local("OptimusSemi"), url(../fonts/OptimusPrinceps.ttf);
 }
 
+.gear,
+.gear2,
+.spinGear,
+.spinGear2 {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  top: 88px;
+}
+
+.gear2,
+.spinGear2 {
+  right: calc(10vw - 75px);
+}
+
+.spinGear2 {
+  animation-name: spin;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+}
+
+.spinGear {
+  animation-name: spin2;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+}
+
+.gear,
+.spinGear {
+  left: calc(10vw - 75px);
+}
+
+@keyframes spin {
+  10% {
+    transform: rotate(36deg);
+  }
+  20% {
+    transform: rotate(72deg);
+  }
+  30% {
+    transform: rotate(108deg);
+  }
+  40% {
+    transform: rotate(144deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  60% {
+    transform: rotate(216deg);
+  }
+  70% {
+    transform: rotate(252deg);
+  }
+  80% {
+    transform: rotate(288deg);
+  }
+  90% {
+    transform: rotate(324deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin2 {
+  10% {
+    transform: rotate(-36deg);
+  }
+  20% {
+    transform: rotate(-72deg);
+  }
+  30% {
+    transform: rotate(-108deg);
+  }
+  40% {
+    transform: rotate(-144deg);
+  }
+  50% {
+    transform: rotate(-180deg);
+  }
+  60% {
+    transform: rotate(-216deg);
+  }
+  70% {
+    transform: rotate(-252deg);
+  }
+  80% {
+    transform: rotate(-288deg);
+  }
+  90% {
+    transform: rotate(-324deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
 .spinner {
-  width: 80vw;
-  margin: auto auto;
-  white-space: nowrap;
-  overflow-x: hidden;
+  width: 100vw;
   position: relative;
   height: 300px;
+  overflow-x: hidden;
 }
 
 .spinItem {
@@ -26,6 +124,8 @@
   transition-duration: 2s;
   border-right: solid black 1px;
   background-image: radial-gradient(circle, purple, rgb(219, 51, 219), black);
+  background-image: radial-gradient(circle, goldenrod, goldenrod, black);
+
   height: 150px;
 }
 
@@ -115,14 +215,18 @@ body {
 .Page {
   position: relative;
   min-height: 150vh;
-  background-image: url("../images/TFTBackground5.5.jpeg");
+  /* background-image: url("../images/TFTBackground5.5.jpeg"); */
+  background-image: url("../images/finalGearsBackground2.jpeg");
   background-repeat: round;
+  overflow-x: hidden;
 }
 
 .webp.Page {
   position: relative;
   min-height: 150vh;
-  background-image: url("../images/TFTBackground5.5.webp");
+  /* background-image: url("../images/TFTBackground5.5.webp"); */
+  background-image: url("../images/finalGearsBackground2.jpeg");
+
   background-repeat: round;
 }
 
@@ -136,14 +240,22 @@ body {
 .compReveal {
   text-align: center;
   margin-bottom: 50px;
-  color: rgb(204, 204, 204);
+  /* color: rgb(204, 204, 204); */
+  color: white;
   font-family: Optimus, serif;
   font-size: 36px;
 }
 
 .spinItemsContainer {
-  border: 3px solid black;
+  box-sizing: border-box;
+  border: 3px solid goldenrod;
+  width: 80vw;
   margin-top: 85px;
+  white-space: nowrap;
+  overflow-x: hidden;
+  z-index: 2;
+  position: absolute;
+  left: 10vw;
 }
 
 .pointer {
@@ -181,8 +293,11 @@ body {
   margin: auto auto;
   width: 150px;
   height: 150px;
-  background-color: black;
-  color: white;
+  background-color: #241877;
+  /* background-color: #d4fd60; */
+  /* border: 1px solid #d4fd60; */
+  /* color: #241877; */
+  color: #d4fd60;
   top: 2px;
   left: 2px;
   border: none;
@@ -216,7 +331,7 @@ body {
 }
 
 .btnContainer:hover {
-  background-color: limegreen;
+  background-color: goldenrod;
   transition-duration: 200ms;
 }
 

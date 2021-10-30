@@ -4,6 +4,7 @@ import allComps from "../data/compsArray"
 import pointerImage from "../images/tftPenguinSmall.webp"
 import pointerImagePng from "../images/tftPenguinSmall.png"
 import { Helmet } from "react-helmet"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 export default function Home() {
   const divArray = allComps.concat(allComps)
@@ -14,6 +15,7 @@ export default function Home() {
   const [btnContainerClass, setBtnContainerClass] = useState("btnContainer")
   const [timer, setTimer] = useState("done")
   const [webP, setWebp] = useState("webp")
+  const [gearClass, setGearClass] = useState("gear")
 
   useEffect(() => {
     const check_webp_feature = (feature, callback) => {
@@ -45,7 +47,7 @@ export default function Home() {
   }
 
   const myfunction = () => {
-    let myRandomNumber = Math.floor(Math.random() * 4600) / 100
+    let myRandomNumber = Math.floor(Math.random() * 4700) / 100
 
     let pixelAdjust = 0
 
@@ -66,7 +68,7 @@ export default function Home() {
     const newRandomNumber = Math.round(myRandomNumber) * 100 + pixelAdjust
     const randomNumWithPixels = "-" + newRandomNumber + "px"
     setSpinLeft(randomNumWithPixels)
-    const compId = Math.round((newRandomNumber / 100) % 26) + spinnerAdjust
+    const compId = Math.round((newRandomNumber / 100) % 27) + spinnerAdjust
 
     if (yourComp === divArray[compId]) {
       myfunction()
@@ -76,12 +78,14 @@ export default function Home() {
 
     setBtnClass("spinBtnFlip")
     setBtnContainerClass("btnContainerFlip")
+    setGearClass("spinGear")
 
     setTimeout(function () {
       setBtnClass("spinBtn")
       setBtnContainerClass("btnContainer")
       setTimer("notdone")
-    }, 1100)
+      setGearClass("gear")
+    }, 1500)
     setTimer("done")
   }
 
@@ -100,7 +104,7 @@ export default function Home() {
         <header className="mainHeading">
           <h1>TFTRandom</h1>
           <h2>A tft randomizer made by Twiggymocha</h2>
-          <h3>Updated for TFT Version 5.5</h3>
+          <h3>Updated for TFT Version 6</h3>
           <h3>HOW IT WORKS</h3>
           <p>
             You press the "spin" button. A random trait gets selected, this is
@@ -112,6 +116,10 @@ export default function Home() {
         </header>
 
         <div className="spinner">
+          {/* <GatsbyImage image={}/> */}
+          <img src="Gear.png" alt="gear" className={`${gearClass}`} />
+          <img src="Gear.png" alt="gear" className={`${gearClass}2`} />
+
           <img
             src={webP ? pointerImage : pointerImagePng}
             className="pointer"
