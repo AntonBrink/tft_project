@@ -335,6 +335,24 @@ body {
   transition-duration: 200ms;
 }
 
+@media only screen and (max-width: 640px) {
+  .Page {
+    position: relative;
+    min-height: 150vh;
+    background-image: url("../images/TFTGearsBackgroundMobile.jpeg");
+    background-repeat: round;
+    overflow-x: hidden;
+  }
+
+  .webp.Page {
+    position: relative;
+    min-height: 150vh;
+    background-image: url("../images/TFTGearsBackgroundMobile.jpeg");
+
+    background-repeat: round;
+  }
+}
+
 @media only screen and (max-width: 360px) {
   .content {
     padding-bottom: 5rem;
