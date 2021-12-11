@@ -13,5 +13,6 @@ module.exports = {
         icon: `static/favicon.ico`,
       },
     },
+    `gatsby-plugin-offline`,
   ],
 }
