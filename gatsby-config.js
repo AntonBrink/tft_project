@@ -10,7 +10,7 @@ module.exports = {
         background_color: `#15aff2`,
         theme_color: `#15aff2`,
         display: `standalone`,
-        icon: `static/favicon.ico`,
+        icon: `src/images/tftIcon.png`,
       },
     },
     `gatsby-plugin-offline`,
