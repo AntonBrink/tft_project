@@ -4,6 +4,9 @@ import allComps from "../data/compsArray"
 import pointerImage from "../images/tftPenguinSmall.webp"
 import pointerImagePng from "../images/tftPenguinSmall.png"
 import { Helmet } from "react-helmet"
+import hexsound from "../sounds/hexsound.mp3"
+import gearsound from "../sounds/gearsound.mp3"
+
 import { GatsbyImage } from "gatsby-plugin-image"
 
 export default function Home() {
@@ -16,6 +19,12 @@ export default function Home() {
   const [timer, setTimer] = useState("done")
   const [webP, setWebp] = useState("webp")
   const [gearClass, setGearClass] = useState("gear")
+  const [hexClass, setHexClass] = useState("hex-background-noshow")
+  const hexSound = new Audio(hexsound)
+  const gearSound = new Audio(gearsound)
+
+  let currentVolume = 1
+  let sound
 
   useEffect(() => {
     const check_webp_feature = (feature, callback) => {
@@ -80,13 +89,35 @@ export default function Home() {
     setBtnContainerClass("btnContainerFlip")
     setGearClass("spinGear")
 
+    setHexClass("hex-background")
+    hexSound.load()
+    gearSound.play()
     setTimeout(function () {
       setBtnClass("spinBtn")
       setBtnContainerClass("btnContainer")
       setTimer("notdone")
       setGearClass("gear")
+      gearSound.pause()
+      hexSound.play()
+      sound = setInterval(reduceSound, 15)
     }, 1500)
+
     setTimer("done")
+
+    setTimeout(function () {
+      setHexClass("hex-background-noshow")
+      clearInterval(sound)
+    }, 3000)
+  }
+
+  const reduceSound = () => {
+    if (!currentVolume <= 0 && currentVolume - 0.01 >= 0) {
+      hexSound.volume = currentVolume
+      currentVolume -= 0.01
+      console.log(hexSound.volume)
+    } else {
+      clearInterval(sound)
+    }
   }
 
   return (
@@ -101,10 +132,44 @@ export default function Home() {
         />
       </Helmet>
       <div className="content">
+        <audio id="hex-sound" src="./sounds/hex-sound.mp3">
+          <source src="../sounds/hex-sound.mp3" type="audio/mpeg" />
+        </audio>
+
+        <svg
+          xmlnsXlink="http://www.w3.org/1999/xlink"
+          width="100%"
+          height="100%"
+          className={hexClass}
+        >
+          <defs>
+            <pattern
+              id="hexagons"
+              width="50"
+              height="43.4"
+              patternUnits="userSpaceOnUse"
+              patternTransform="scale(5) translate(2) rotate(90)"
+            >
+              <polygon
+                points="24.8,22 37.3,29.2 37.3,43.7 24.8,50.9 12.3,43.7 12.3,29.2"
+                id="hex"
+              />
+              <use xlinkHref="#hex" x="25" />
+              <use xlinkHref="#hex" x="-25" />
+              <use xlinkHref="#hex" x="12.5" y="-21.7" />
+              <use xlinkHref="#hex" x="-12.5" y="-21.7" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#hexagons)" />
+        </svg>
         <header className="mainHeading">
           <h1>TFTRandom</h1>
           <h2>A tft randomizer made by Twiggymocha</h2>
-          <h3>Updated for TFT Version 6</h3>
+          <h3>
+            Updated for TFT Version 6 (Update for version 6.5 will be live
+            before the 20th of February, but please check back daily I will move
+            as fast as possible)
+          </h3>
           <h3>HOW IT WORKS</h3>
           <p>
             You press the "spin" button. A random trait gets selected, this is
@@ -169,6 +234,7 @@ export default function Home() {
             }
           >
             <h1 className="champHeader">Champions with this trait</h1>
+
             <div className="championsDiv">
               {yourComp.champions.map(champ => {
                 return (
