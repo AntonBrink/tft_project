@@ -4,8 +4,8 @@ import allComps from "../data/compsArray"
 import pointerImage from "../images/tftPenguinSmall.webp"
 import pointerImagePng from "../images/tftPenguinSmall.png"
 import { Helmet } from "react-helmet"
-import hexsound from "../sounds/hexsound.mp3"
-import gearsound from "../sounds/gearsound.mp3"
+// import hexsound from "../sounds/hexsound.mp3"
+// import gearsound from "../sounds/gearsound.mp3"
 
 import { GatsbyImage } from "gatsby-plugin-image"
 
@@ -20,8 +20,8 @@ export default function Home() {
   const [webP, setWebp] = useState("webp")
   const [gearClass, setGearClass] = useState("gear")
   const [hexClass, setHexClass] = useState("hex-background-noshow")
-  const hexSound = new Audio(hexsound)
-  const gearSound = new Audio(gearsound)
+  // const hexSound = new Audio(hexsound)
+  // const gearSound = new Audio(gearsound)
 
   let currentVolume = 1
   let sound
@@ -90,15 +90,15 @@ export default function Home() {
     setGearClass("spinGear")
 
     setHexClass("hex-background")
-    hexSound.load()
-    gearSound.play()
+    // hexSound.load()
+    // gearSound.play()
     setTimeout(function () {
       setBtnClass("spinBtn")
       setBtnContainerClass("btnContainer")
       setTimer("notdone")
       setGearClass("gear")
-      gearSound.pause()
-      hexSound.play()
+      // gearSound.pause()
+      // hexSound.play()
       sound = setInterval(reduceSound, 15)
     }, 1500)
 
@@ -112,9 +112,9 @@ export default function Home() {
 
   const reduceSound = () => {
     if (!currentVolume <= 0 && currentVolume - 0.01 >= 0) {
-      hexSound.volume = currentVolume
-      currentVolume -= 0.01
-      console.log(hexSound.volume)
+      // hexSound.volume = currentVolume
+      // currentVolume -= 0.01
+      // console.log(hexSound.volume)
     } else {
       clearInterval(sound)
     }
@@ -132,9 +132,9 @@ export default function Home() {
         />
       </Helmet>
       <div className="content">
-        <audio id="hex-sound" src="./sounds/hex-sound.mp3">
+        {/* <audio id="hex-sound" src="./sounds/hex-sound.mp3">
           <source src="../sounds/hex-sound.mp3" type="audio/mpeg" />
-        </audio>
+        </audio> */}
 
         <svg
           xmlnsXlink="http://www.w3.org/1999/xlink"
