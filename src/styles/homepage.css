@@ -183,7 +183,7 @@ polygon {
   transition-duration: 2s;
   border-right: solid black 1px;
   background-image: radial-gradient(circle, purple, rgb(219, 51, 219), black);
-  background-image: radial-gradient(circle, goldenrod, goldenrod, black);
+  /* background-image: radial-gradient(circle, goldenrod, goldenrod, black); */
 
   height: 150px;
 }

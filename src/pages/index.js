@@ -4,11 +4,8 @@ import allComps from "../data/compsArray"
 import pointerImage from "../images/tftPenguinSmall.webp"
 import pointerImagePng from "../images/tftPenguinSmall.png"
 import { Helmet } from "react-helmet"
-// import hexsound from "../sounds/hexsound.mp3"
-// import gearsound from "../sounds/gearsound.mp3"
-
-import { GatsbyImage } from "gatsby-plugin-image"
-
+import hexsound from "../sounds/hexsound.mp3"
+import gearsound from "../sounds/gearsound.mp3"
 export default function Home() {
   const divArray = allComps.concat(allComps)
   const divArray2 = divArray.concat(allComps)
@@ -20,11 +17,18 @@ export default function Home() {
   const [webP, setWebp] = useState("webp")
   const [gearClass, setGearClass] = useState("gear")
   const [hexClass, setHexClass] = useState("hex-background-noshow")
-  // const hexSound = new Audio(hexsound)
-  // const gearSound = new Audio(gearsound)
+  const [hexSound, setHexSound] = useState({ hexSoundObject: {} })
+  const [gearSound, setGearSound] = useState({ gearSoundObject: {} })
 
   let currentVolume = 1
   let sound
+
+  useEffect(() => {
+    setHexSound({ hexSoundObject: new Audio(hexsound) })
+    setGearSound({ gearSoundObject: new Audio(gearsound) })
+
+    console.log(hexSound.hexSoundObject)
+  }, [])
 
   useEffect(() => {
     const check_webp_feature = (feature, callback) => {
@@ -90,15 +94,15 @@ export default function Home() {
     setGearClass("spinGear")
 
     setHexClass("hex-background")
-    // hexSound.load()
-    // gearSound.play()
+    hexSound.hexSoundObject.load()
+    gearSound.gearSoundObject.play()
     setTimeout(function () {
       setBtnClass("spinBtn")
       setBtnContainerClass("btnContainer")
       setTimer("notdone")
       setGearClass("gear")
-      // gearSound.pause()
-      // hexSound.play()
+      gearSound.gearSoundObject.pause()
+      hexSound.hexSoundObject.play()
       sound = setInterval(reduceSound, 15)
     }, 1500)
 
@@ -112,9 +116,8 @@ export default function Home() {
 
   const reduceSound = () => {
     if (!currentVolume <= 0 && currentVolume - 0.01 >= 0) {
-      // hexSound.volume = currentVolume
-      // currentVolume -= 0.01
-      // console.log(hexSound.volume)
+      hexSound.hexSoundObject.volume = currentVolume
+      currentVolume -= 0.01
     } else {
       clearInterval(sound)
     }
@@ -132,9 +135,9 @@ export default function Home() {
         />
       </Helmet>
       <div className="content">
-        {/* <audio id="hex-sound" src="./sounds/hex-sound.mp3">
+        <audio id="hex-sound" src="./sounds/hex-sound.mp3">
           <source src="../sounds/hex-sound.mp3" type="audio/mpeg" />
-        </audio> */}
+        </audio>
 
         <svg
           xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -165,11 +168,7 @@ export default function Home() {
         <header className="mainHeading">
           <h1>TFTRandom</h1>
           <h2>A tft randomizer made by Twiggymocha</h2>
-          <h3>
-            Updated for TFT Version 6 (Update for version 6.5 will be live
-            before the 20th of February, but please check back daily I will move
-            as fast as possible)
-          </h3>
+          <h3>Updated for TFT Version 6.5</h3>
           <h3>HOW IT WORKS</h3>
           <p>
             You press the "spin" button. A random trait gets selected, this is
