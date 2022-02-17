@@ -95,6 +95,7 @@ export default function Home() {
 
     setHexClass("hex-background")
     hexSound.hexSoundObject.load()
+    gearSound.gearSoundObject.load()
     gearSound.gearSoundObject.play()
     setTimeout(function () {
       setBtnClass("spinBtn")
