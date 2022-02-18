@@ -132,7 +132,7 @@ export default function Home() {
             adjustAmount =
               myRandomNumber * multiplier + positionAdd - first + "px"
             break
-          case 0:
+          case 2:
             adjustAmount =
               myRandomNumber * multiplier + positionAdd - second + "px"
             break
