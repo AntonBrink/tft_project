@@ -19,6 +19,8 @@ export default function Home() {
   const [hexClass, setHexClass] = useState("hex-background-noshow")
   const [hexSound, setHexSound] = useState({ hexSoundObject: {} })
   const [gearSound, setGearSound] = useState({ gearSoundObject: {} })
+  const [spinnerWidth, setSpinnerWidth] = useState(1400)
+  const [currentId, setCurrentId] = useState(0)
 
   let currentVolume = 1
   let sound
@@ -26,9 +28,16 @@ export default function Home() {
   useEffect(() => {
     setHexSound({ hexSoundObject: new Audio(hexsound) })
     setGearSound({ gearSoundObject: new Audio(gearsound) })
-
-    console.log(hexSound.hexSoundObject)
   }, [])
+
+  useEffect(() => {
+    if (yourComp === divArray[currentId]) {
+      myfunction()
+    } else {
+      setYourComp(divArray2[currentId])
+    }
+    console.log(currentId)
+  }, [currentId])
 
   useEffect(() => {
     const check_webp_feature = (feature, callback) => {
@@ -60,42 +69,90 @@ export default function Home() {
   }
 
   const myfunction = () => {
-    let myRandomNumber = Math.floor(Math.random() * 4700) / 100
+    let myRandomNumber = Math.random() * 27
+    let adjustAmount = 0
+    let positionAdd = 700
+    let multiplier = 100
+    let first = 200
+    let second = 100
+    myRandomNumber = Math.floor(myRandomNumber)
 
-    let pixelAdjust = 0
-
-    if (window.innerWidth < 1200) {
-      pixelAdjust = 30
-      console.log("occurs")
+    if (window.innerWidth < 1920) {
+      if (window.innerWidth <= 1440) {
+        setSpinnerWidth(1000)
+        positionAdd = 500
+      }
+      if (window.innerWidth <= 1024) {
+        setSpinnerWidth(700)
+        positionAdd = 300
+      }
+      if (window.innerWidth <= 768) {
+        setSpinnerWidth(500)
+        positionAdd = 200
+      }
+      if (window.innerWidth <= 425) {
+        setSpinnerWidth(375)
+        positionAdd = 150
+        multiplier = 75
+        first = 75
+        second = 150
+      }
+      if (window.innerWidth <= 375) {
+        setSpinnerWidth(300)
+        positionAdd = 150
+        multiplier = 75
+        first = 75
+        second = 150
+      }
     }
 
-    if (window.innerWidth == 425) {
-      pixelAdjust = 0
-      console.log("occurs")
-    }
+    console.log(positionAdd)
+    let newId
 
-    const spinnerWidth = window.innerWidth * 0.8
-    let spinnerAdjust = spinnerWidth / 2 / 100
-    spinnerAdjust = (Math.floor(spinnerAdjust) * 100) / 100
+    if (currentId <= 26) {
+      adjustAmount =
+        "-" + ((myRandomNumber + 27) * multiplier - positionAdd) + "px"
+      newId = myRandomNumber + 27
+      setCurrentId(newId)
+    } else if (currentId > 26 && currentId <= 53) {
+      adjustAmount =
+        "-" + ((myRandomNumber + 54) * multiplier - positionAdd) + "px"
+      newId = myRandomNumber + 54
 
-    const newRandomNumber = Math.round(myRandomNumber) * 100 + pixelAdjust
-    const randomNumWithPixels = "-" + newRandomNumber + "px"
-    setSpinLeft(randomNumWithPixels)
-    const compId = Math.round((newRandomNumber / 100) % 27) + spinnerAdjust
-
-    if (yourComp === divArray[compId]) {
-      myfunction()
+      setCurrentId(newId)
     } else {
-      setYourComp(divArray2[compId])
+      newId = myRandomNumber
+
+      if (newId < 3) {
+        switch (newId) {
+          case 0:
+            adjustAmount = myRandomNumber * multiplier + positionAdd + "px"
+            break
+          case 1:
+            adjustAmount =
+              myRandomNumber * multiplier + positionAdd - first + "px"
+            break
+          case 0:
+            adjustAmount =
+              myRandomNumber * multiplier + positionAdd - second + "px"
+            break
+        }
+      } else {
+        adjustAmount = "-" + (myRandomNumber * multiplier - positionAdd) + "px"
+      }
+
+      setCurrentId(newId)
     }
+
+    console.log(adjustAmount)
+
+    setSpinLeft(adjustAmount)
 
     setBtnClass("spinBtnFlip")
     setBtnContainerClass("btnContainerFlip")
     setGearClass("spinGear")
 
     setHexClass("hex-background")
-    hexSound.hexSoundObject.load()
-    gearSound.gearSoundObject.load()
     gearSound.gearSoundObject.play()
     setTimeout(function () {
       setBtnClass("spinBtn")
@@ -112,6 +169,8 @@ export default function Home() {
     setTimeout(function () {
       setHexClass("hex-background-noshow")
       clearInterval(sound)
+      gearSound.gearSoundObject.load()
+      hexSound.hexSoundObject.load()
     }, 3000)
   }
 
