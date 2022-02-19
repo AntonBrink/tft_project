@@ -135,19 +135,19 @@ export default function Home() {
                 break
               case 1:
                 adjustAmount =
-                  myRandomNumber * multiplier + positionAdd - 600 + "px"
+                  myRandomNumber * multiplier + positionAdd - 200 + "px"
                 break
               case 2:
                 adjustAmount =
-                  myRandomNumber * multiplier + positionAdd - 700 + "px"
+                  myRandomNumber * multiplier + positionAdd - 400 + "px"
                 break
               case 3:
                 adjustAmount =
-                  myRandomNumber * multiplier + positionAdd - 800 + "px"
+                  myRandomNumber * multiplier + positionAdd - 600 + "px"
                 break
               case 4:
                 adjustAmount =
-                  myRandomNumber * multiplier + positionAdd - 900 + "px"
+                  myRandomNumber * multiplier + positionAdd - 800 + "px"
                 break
               case 5:
                 adjustAmount =
@@ -155,7 +155,7 @@ export default function Home() {
                 break
               case 6:
                 adjustAmount =
-                  myRandomNumber * multiplier + positionAdd - 1100 + "px"
+                  myRandomNumber * multiplier + positionAdd - 1200 + "px"
                 break
             }
           } else {
@@ -172,19 +172,19 @@ export default function Home() {
                 break
               case 1:
                 adjustAmount =
-                  myRandomNumber * multiplier + positionAdd - first + "px"
+                  myRandomNumber * multiplier + positionAdd - 200 + "px"
                 break
               case 2:
                 adjustAmount =
-                  myRandomNumber * multiplier + positionAdd - second + "px"
+                  myRandomNumber * multiplier + positionAdd - 400 + "px"
                 break
               case 3:
                 adjustAmount =
-                  myRandomNumber * multiplier + positionAdd - second + "px"
+                  myRandomNumber * multiplier + positionAdd - 600 + "px"
                 break
               case 4:
                 adjustAmount =
-                  myRandomNumber * multiplier + positionAdd - second + "px"
+                  myRandomNumber * multiplier + positionAdd - 800 + "px"
                 break
             }
           } else {
