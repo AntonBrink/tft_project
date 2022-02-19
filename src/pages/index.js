@@ -19,15 +19,22 @@ export default function Home() {
   const [hexClass, setHexClass] = useState("hex-background-noshow")
   const [hexSound, setHexSound] = useState({ hexSoundObject: {} })
   const [gearSound, setGearSound] = useState({ gearSoundObject: {} })
-  const [spinnerWidth, setSpinnerWidth] = useState(1400)
   const [currentId, setCurrentId] = useState(0)
+  const [buttonClickable, setButtonClickable] = useState(true)
 
   let currentVolume = 1
   let sound
 
+  // useEffect(() => {
+
+  //   setButtonClickable(true)
+
+  // }, [hexSound, gearSound])
+
   useEffect(() => {
     setHexSound({ hexSoundObject: new Audio(hexsound) })
     setGearSound({ gearSoundObject: new Audio(gearsound) })
+    setButtonClickable(false)
   }, [])
 
   useEffect(() => {
@@ -69,6 +76,7 @@ export default function Home() {
   }
 
   const myfunction = () => {
+    setButtonClickable(true)
     let myRandomNumber = Math.random() * 27
     let adjustAmount = 0
     let positionAdd = 700
@@ -79,26 +87,21 @@ export default function Home() {
 
     if (window.innerWidth < 1920) {
       if (window.innerWidth <= 1440) {
-        setSpinnerWidth(1000)
         positionAdd = 500
       }
       if (window.innerWidth <= 1024) {
-        setSpinnerWidth(700)
         positionAdd = 300
       }
       if (window.innerWidth <= 768) {
-        setSpinnerWidth(500)
         positionAdd = 200
       }
       if (window.innerWidth <= 425) {
-        setSpinnerWidth(375)
         positionAdd = 150
         multiplier = 75
         first = 75
         second = 150
       }
       if (window.innerWidth <= 375) {
-        setSpinnerWidth(300)
         positionAdd = 150
         multiplier = 75
         first = 75
@@ -123,22 +126,123 @@ export default function Home() {
     } else {
       newId = myRandomNumber
 
-      if (newId < 3) {
-        switch (newId) {
-          case 0:
-            adjustAmount = myRandomNumber * multiplier + positionAdd + "px"
-            break
-          case 1:
+      switch (positionAdd) {
+        case 700:
+          if (newId < 7) {
+            switch (newId) {
+              case 0:
+                adjustAmount = myRandomNumber * multiplier + positionAdd + "px"
+                break
+              case 1:
+                adjustAmount =
+                  myRandomNumber * multiplier + positionAdd - 600 + "px"
+                break
+              case 2:
+                adjustAmount =
+                  myRandomNumber * multiplier + positionAdd - 700 + "px"
+                break
+              case 3:
+                adjustAmount =
+                  myRandomNumber * multiplier + positionAdd - 800 + "px"
+                break
+              case 4:
+                adjustAmount =
+                  myRandomNumber * multiplier + positionAdd - 900 + "px"
+                break
+              case 5:
+                adjustAmount =
+                  myRandomNumber * multiplier + positionAdd - 1000 + "px"
+                break
+              case 6:
+                adjustAmount =
+                  myRandomNumber * multiplier + positionAdd - 1100 + "px"
+                break
+            }
+          } else {
             adjustAmount =
-              myRandomNumber * multiplier + positionAdd - first + "px"
-            break
-          case 2:
+              "-" + (myRandomNumber * multiplier - positionAdd) + "px"
+          }
+          break
+
+        case 500:
+          if (newId < 5) {
+            switch (newId) {
+              case 0:
+                adjustAmount = myRandomNumber * multiplier + positionAdd + "px"
+                break
+              case 1:
+                adjustAmount =
+                  myRandomNumber * multiplier + positionAdd - first + "px"
+                break
+              case 2:
+                adjustAmount =
+                  myRandomNumber * multiplier + positionAdd - second + "px"
+                break
+              case 3:
+                adjustAmount =
+                  myRandomNumber * multiplier + positionAdd - second + "px"
+                break
+              case 4:
+                adjustAmount =
+                  myRandomNumber * multiplier + positionAdd - second + "px"
+                break
+            }
+          } else {
             adjustAmount =
-              myRandomNumber * multiplier + positionAdd - second + "px"
-            break
-        }
-      } else {
-        adjustAmount = "-" + (myRandomNumber * multiplier - positionAdd) + "px"
+              "-" + (myRandomNumber * multiplier - positionAdd) + "px"
+          }
+          break
+
+        case 300:
+          if (newId < 2) {
+            switch (newId) {
+              case 0:
+                adjustAmount = myRandomNumber * multiplier + positionAdd + "px"
+                break
+              case 1:
+                adjustAmount =
+                  myRandomNumber * multiplier + positionAdd - first + "px"
+                break
+            }
+          } else {
+            adjustAmount =
+              "-" + (myRandomNumber * multiplier - positionAdd) + "px"
+          }
+          break
+
+        case 200:
+          if (newId < 2) {
+            switch (newId) {
+              case 0:
+                adjustAmount = myRandomNumber * multiplier + positionAdd + "px"
+                break
+              case 1:
+                adjustAmount =
+                  myRandomNumber * multiplier + positionAdd - first + "px"
+                break
+            }
+          } else {
+            adjustAmount =
+              "-" + (myRandomNumber * multiplier - positionAdd) + "px"
+          }
+          break
+
+        case 150:
+          if (newId < 2) {
+            switch (newId) {
+              case 0:
+                adjustAmount = myRandomNumber * multiplier + positionAdd + "px"
+                break
+              case 1:
+                adjustAmount =
+                  myRandomNumber * multiplier + positionAdd - first + "px"
+                break
+            }
+          } else {
+            adjustAmount =
+              "-" + (myRandomNumber * multiplier - positionAdd) + "px"
+          }
+          break
       }
 
       setCurrentId(newId)
@@ -171,6 +275,7 @@ export default function Home() {
       clearInterval(sound)
       gearSound.gearSoundObject.load()
       hexSound.hexSoundObject.load()
+      setButtonClickable(false)
     }, 3000)
   }
 
@@ -321,6 +426,7 @@ export default function Home() {
               myfunction()
             }}
             className={btnClass}
+            disabled={buttonClickable}
           >
             Spin!
           </button>
