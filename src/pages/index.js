@@ -267,8 +267,6 @@ export default function Home() {
     setTimeout(function () {
       setHexClass("hex-background-noshow")
       clearInterval(sound)
-      gearSound.gearSoundObject.load()
-      hexSound.hexSoundObject.load()
       setButtonClickable(false)
     }, 3000)
   }
