@@ -25,16 +25,10 @@ export default function Home() {
   let currentVolume = 1
   let sound
 
-  // useEffect(() => {
-
-  //   setButtonClickable(true)
-
-  // }, [hexSound, gearSound])
-
   useEffect(() => {
+    setButtonClickable(false)
     setHexSound({ hexSoundObject: new Audio(hexsound) })
     setGearSound({ gearSoundObject: new Audio(gearsound) })
-    setButtonClickable(false)
   }, [])
 
   useEffect(() => {
@@ -43,7 +37,6 @@ export default function Home() {
     } else {
       setYourComp(divArray2[currentId])
     }
-    console.log(currentId)
   }, [currentId])
 
   useEffect(() => {
@@ -82,7 +75,6 @@ export default function Home() {
     let positionAdd = 700
     let multiplier = 100
     let first = 200
-    let second = 100
     myRandomNumber = Math.floor(myRandomNumber)
 
     if (window.innerWidth < 1920) {
@@ -99,17 +91,14 @@ export default function Home() {
         positionAdd = 150
         multiplier = 75
         first = 75
-        second = 150
       }
       if (window.innerWidth <= 375) {
         positionAdd = 150
         multiplier = 75
         first = 75
-        second = 150
       }
     }
 
-    console.log(positionAdd)
     let newId
 
     if (currentId <= 26) {
@@ -248,8 +237,6 @@ export default function Home() {
       setCurrentId(newId)
     }
 
-    console.log(adjustAmount)
-
     setSpinLeft(adjustAmount)
 
     setBtnClass("spinBtnFlip")
@@ -300,10 +287,6 @@ export default function Home() {
         />
       </Helmet>
       <div className="content">
-        <audio id="hex-sound" src="./sounds/hex-sound.mp3">
-          <source src="../sounds/hex-sound.mp3" type="audio/mpeg" />
-        </audio>
-
         <svg
           xmlnsXlink="http://www.w3.org/1999/xlink"
           width="100%"
@@ -409,6 +392,7 @@ export default function Home() {
                       className="champImg"
                       height="75px"
                       width="85"
+                      loading="eager"
                     />
                     <p className="champName">{champ}</p>
                   </div>
