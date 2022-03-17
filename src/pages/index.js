@@ -26,10 +26,15 @@ export default function Home() {
   let sound
 
   useEffect(() => {
-    setButtonClickable(false)
     setHexSound({ hexSoundObject: new Audio(hexsound) })
     setGearSound({ gearSoundObject: new Audio(gearsound) })
   }, [])
+
+  useEffect(() => {
+    if (hexSound.hexSoundObject && gearSound.gearSoundObject) {
+      setButtonClickable(false)
+    }
+  }, [hexSound, gearSound])
 
   useEffect(() => {
     if (yourComp === divArray[currentId]) {
