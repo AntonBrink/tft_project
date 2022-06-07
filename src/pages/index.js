@@ -284,7 +284,7 @@ export default function Home() {
     <main className={`${webP} Page`}>
       <Helmet>
         <title>
-          TFTRandom Random Trait/Comp Generator for TFT Reckoning Patch 11.16
+          TFTRandom Random Trait/Comp Generator for TFT Reckoning Patch 11.16 -
         </title>
         <meta
           name="description"
@@ -322,6 +322,10 @@ export default function Home() {
           <h1>TFTRandom</h1>
           <h2>A tft randomizer made by Twiggymocha</h2>
           <h3>Updated for TFT Version 6.5</h3>
+          <h3>
+            I will update this website for the Dragnonlands set by the 13th of
+            June, sorry for the delay
+          </h3>
           <h3>HOW IT WORKS</h3>
           <p>
             You press the "spin" button. A random trait gets selected, this is
