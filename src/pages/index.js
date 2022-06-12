@@ -16,25 +16,25 @@ export default function Home() {
   const [timer, setTimer] = useState("done")
   const [webP, setWebp] = useState("webp")
   const [gearClass, setGearClass] = useState("gear")
-  const [hexClass, setHexClass] = useState("hex-background-noshow")
-  const [hexSound, setHexSound] = useState({ hexSoundObject: {} })
-  const [gearSound, setGearSound] = useState({ gearSoundObject: {} })
+  // const [hexClass, setHexClass] = useState("hex-background-noshow")
+  // const [hexSound, setHexSound] = useState({ hexSoundObject: {} })
+  // const [gearSound, setGearSound] = useState({ gearSoundObject: {} })
   const [currentId, setCurrentId] = useState(0)
-  const [buttonClickable, setButtonClickable] = useState(true)
+  const [buttonClickable, setButtonClickable] = useState(false)
 
-  let currentVolume = 1
-  let sound
+  // let currentVolume = 1
+  // let sound
 
-  useEffect(() => {
-    setHexSound({ hexSoundObject: new Audio(hexsound) })
-    setGearSound({ gearSoundObject: new Audio(gearsound) })
-  }, [])
+  // useEffect(() => {
+  //   setHexSound({ hexSoundObject: new Audio(hexsound) })
+  //   setGearSound({ gearSoundObject: new Audio(gearsound) })
+  // }, [])
 
-  useEffect(() => {
-    if (hexSound.hexSoundObject && gearSound.gearSoundObject) {
-      setButtonClickable(false)
-    }
-  }, [hexSound, gearSound])
+  // useEffect(() => {
+  //   if (hexSound.hexSoundObject && gearSound.gearSoundObject) {
+  //     setButtonClickable(false)
+  //   }
+  // }, [hexSound, gearSound])
 
   useEffect(() => {
     if (yourComp === divArray[currentId]) {
@@ -248,36 +248,16 @@ export default function Home() {
     setBtnContainerClass("btnContainerFlip")
     setGearClass("spinGear")
 
-    setHexClass("hex-background")
-    gearSound.gearSoundObject.load()
-    hexSound.hexSoundObject.load()
-    gearSound.gearSoundObject.play()
     setTimeout(function () {
       setBtnClass("spinBtn")
       setBtnContainerClass("btnContainer")
       setTimer("notdone")
       setGearClass("gear")
-      gearSound.gearSoundObject.pause()
-      hexSound.hexSoundObject.play()
-      sound = setInterval(reduceSound, 15)
     }, 1500)
 
     setTimer("done")
 
-    setTimeout(function () {
-      setHexClass("hex-background-noshow")
-      clearInterval(sound)
-      setButtonClickable(false)
-    }, 3000)
-  }
-
-  const reduceSound = () => {
-    if (!currentVolume <= 0 && currentVolume - 0.01 >= 0) {
-      hexSound.hexSoundObject.volume = currentVolume
-      currentVolume -= 0.01
-    } else {
-      clearInterval(sound)
-    }
+    setButtonClickable(false)
   }
 
   return (
@@ -292,39 +272,17 @@ export default function Home() {
         />
       </Helmet>
       <div className="content">
-        <svg
-          xmlnsXlink="http://www.w3.org/1999/xlink"
-          width="100%"
-          height="100%"
-          className={hexClass}
-        >
-          <defs>
-            <pattern
-              id="hexagons"
-              width="50"
-              height="43.4"
-              patternUnits="userSpaceOnUse"
-              patternTransform="scale(5) translate(2) rotate(90)"
-            >
-              <polygon
-                points="24.8,22 37.3,29.2 37.3,43.7 24.8,50.9 12.3,43.7 12.3,29.2"
-                id="hex"
-              />
-              <use xlinkHref="#hex" x="25" />
-              <use xlinkHref="#hex" x="-25" />
-              <use xlinkHref="#hex" x="12.5" y="-21.7" />
-              <use xlinkHref="#hex" x="-12.5" y="-21.7" />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#hexagons)" />
-        </svg>
         <header className="mainHeading">
           <h1>TFTRandom</h1>
           <h2>A tft randomizer made by Twiggymocha</h2>
           <h3>Updated for TFT Version 6.5</h3>
           <h3>
             I will update this website for the Dragnonlands set by the 13th of
-            June, sorry for the delay
+            June, sorry for the delay. As you can see, I did start working on
+            the site but I am going to have to push the update a few more days,
+            I got sick and couldn't get myself to sit at my desk, going to
+            completely redo the website too, not happy with how it is turning
+            out. I will try to have it ready for Friday the 17th. Really Sorry.
           </h3>
           <h3>HOW IT WORKS</h3>
           <p>
@@ -337,9 +295,15 @@ export default function Home() {
         </header>
 
         <div className="spinner">
-          {/* <GatsbyImage image={}/> */}
-          <img src="Gear.png" alt="gear" className={`${gearClass}`} />
-          <img src="Gear.png" alt="gear" className={`${gearClass}2`} />
+          <div className={`${gearClass}`}>
+            <img
+              style={{ transform: "rotateY(180deg)", maxWidth: "100%" }}
+              src="TFT_dragon2.png"
+              alt="gear"
+            />
+          </div>
+
+          <img src="TFT_dragon2.png" alt="gear" className={`${gearClass}2`} />
 
           <img
             src={webP ? pointerImage : pointerImagePng}
@@ -389,6 +353,7 @@ export default function Home() {
               timer === "done" ? "outerChampDivNoDisplay" : "outerChampDiv"
             }
           >
+            <div className="barsDiv"></div>
             <h1 className="champHeader">Champions with this trait</h1>
 
             <div className="championsDiv">
