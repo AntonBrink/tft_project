@@ -10,61 +10,6 @@
 
 /* hex background */
 
-svg {
-  background: transparent;
-  position: absolute;
-}
-polygon {
-  fill: transparent;
-  stroke-width: 1;
-
-  stroke: rgba(34, 3, 199, 0.1);
-}
-
-.hex-background-noshow {
-  height: 0%;
-}
-
-.hex-background {
-  height: 0%;
-  animation-name: hexAppear;
-  animation-duration: 1.5s;
-  animation-delay: 1.5s;
-}
-
-@keyframes hexAppear {
-  10% {
-    height: 20%;
-  }
-  20% {
-    height: 40%;
-  }
-  30% {
-    height: 60%;
-  }
-  40% {
-    height: 80%;
-  }
-  50% {
-    height: 100%;
-  }
-  60% {
-    height: 80%;
-  }
-  70% {
-    height: 60%;
-  }
-  80% {
-    height: 40%;
-  }
-  90% {
-    height: 20%;
-  }
-  100% {
-    height: 0%;
-  }
-}
-
 /* hex background */
 
 .gear,
@@ -79,12 +24,12 @@ polygon {
 
 .gear2,
 .spinGear2 {
-  left: calc(50vw + 625px);
+  left: calc(50vw + 600px);
 }
 
 .gear,
 .spinGear {
-  right: calc(50vw + 625px);
+  right: calc(50vw + 600px);
 }
 
 .spinGear {
@@ -239,18 +184,19 @@ body {
 .Page {
   position: relative;
   min-height: 150vh;
-  background-size: 100px 100px;
-  background-repeat: repeat;
   overflow-x: hidden;
+  background-image: url("../images/StoneSlab1.jpg"),
+    url("../images/StoneSlab2.jpg"), url("../images/StoneSlab3.jpg");
+  background-repeat: round round, space no-repeat, no-repeat;
+  background-size: 10% calc(1907px * 0.1);
 }
 
 .webp.Page {
   position: relative;
   min-height: 150vh;
-  background: linear-gradient(180deg, black 3px, transparent 3px),
-    linear-gradient(90deg, black 3px, transparent 3px), rgb(94, 94, 94);
-  background-size: 10% calc(1907px * 0.1);
+  background-image: url("../images/StoneSlab123.jpg");
   background-repeat: repeat;
+  background-size: 5% calc(1907px * 0.05);
 }
 
 .traitText {
@@ -472,17 +418,17 @@ body {
   .Page {
     position: relative;
     min-height: 150vh;
-    background-image: url("../images/TFTGearsBackgroundMobile.jpeg");
+    /* background-image: url("../images/TFTGearsBackgroundMobile.jpeg");
     background-repeat: round;
-    overflow-x: hidden;
+    overflow-x: hidden; */
   }
 
   .webp.Page {
     position: relative;
     min-height: 150vh;
-    background-image: url("../images/TFTGearsBackgroundMobile.jpeg");
+    /* background-image: url("../images/TFTGearsBackgroundMobile.jpeg");
 
-    background-repeat: round;
+    background-repeat: round; */
   }
 }
 

@@ -275,15 +275,7 @@ export default function Home() {
         <header className="mainHeading">
           <h1>TFTRandom</h1>
           <h2>A tft randomizer made by Twiggymocha</h2>
-          <h3>Updated for TFT Version 6.5</h3>
-          <h3>
-            I will update this website for the Dragnonlands set by the 13th of
-            June, sorry for the delay. As you can see, I did start working on
-            the site but I am going to have to push the update a few more days,
-            I got sick and couldn't get myself to sit at my desk, going to
-            completely redo the website too, not happy with how it is turning
-            out. I will try to have it ready for Friday the 17th. Really Sorry.
-          </h3>
+          <h3>Updated for TFT Version 7</h3>
           <h3>HOW IT WORKS</h3>
           <p>
             You press the "spin" button. A random trait gets selected, this is
