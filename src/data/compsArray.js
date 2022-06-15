@@ -88,7 +88,7 @@ export const Comps2 = [
     // colors: ["gray", "gray", "black"],
     champions: [
       "Karma",
-      "Darius",
+      "Sett",
       "Ashe",
       "Swain",
       "Lee Sin",
@@ -172,7 +172,7 @@ export const Comps2 = [
     compsize: 9,
     champions: [
       "Senna",
-      "Darius",
+      "Sett",
       "Kayn",
       "Shen",
       "Swain",
