@@ -185,7 +185,7 @@ export const Comps2 = [
     id: 17,
     name: "Revel",
     img: "Revel.png",
-    compsize: 1,
+    compsize: 4,
     champions: ["Tahm Kench", "Jinx", "Corki", "Sona"],
   },
   {
