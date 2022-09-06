@@ -106,15 +106,15 @@ export default function Home() {
 
     let newId
 
-    if (currentId <= 26) {
+    if (currentId <= 28) {
       adjustAmount =
-        "-" + ((myRandomNumber + 27) * multiplier - positionAdd) + "px"
-      newId = myRandomNumber + 27
+        "-" + ((myRandomNumber + 29) * multiplier - positionAdd) + "px"
+      newId = myRandomNumber + 29
       setCurrentId(newId)
-    } else if (currentId > 26 && currentId <= 53) {
+    } else if (currentId > 28 && currentId <= 53) {
       adjustAmount =
-        "-" + ((myRandomNumber + 54) * multiplier - positionAdd) + "px"
-      newId = myRandomNumber + 54
+        "-" + ((myRandomNumber + 56) * multiplier - positionAdd) + "px"
+      newId = myRandomNumber + 56
 
       setCurrentId(newId)
     } else {
@@ -284,10 +284,15 @@ export default function Home() {
             The champions included in this comp are displayed once the spin is
             complete.
           </p>
+          <p>
+            I will redo the theme of the website for the new version when I find
+            the time, for now I just added the new champions and traits and
+            removed the old.
+          </p>
         </header>
 
         <div className="spinner">
-          <div className={`${gearClass}`}>
+          {/* <div className={`${gearClass}`}>
             <img
               style={{ transform: "rotateY(180deg)", maxWidth: "100%" }}
               src="TFT_dragon2.png"
@@ -295,7 +300,7 @@ export default function Home() {
             />
           </div>
 
-          <img src="TFT_dragon2.png" alt="gear" className={`${gearClass}2`} />
+          <img src="TFT_dragon2.png" alt="gear" className={`${gearClass}2`} /> */}
 
           <img
             src={webP ? pointerImage : pointerImagePng}
