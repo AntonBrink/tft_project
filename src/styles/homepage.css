@@ -192,7 +192,6 @@ body {
   position: relative;
   min-height: 150vh;
   background-image: url("../images/background.svg");
-  background-color: purple;
   /* background-image: url("../images/StoneSlab123.jpg"); */
   background-repeat: no-repeat;
   background-size: cover;
