@@ -83,12 +83,7 @@
   transition-duration: 2s;
   border-right: solid black 1px;
   box-sizing: border-box;
-  background-image: radial-gradient(
-    circle,
-    rgb(152, 223, 152),
-    rgb(177, 228, 172),
-    black
-  );
+  background-image: radial-gradient(circle, rgb(3, 216, 228), black);
   height: 150px;
 }
 
@@ -137,7 +132,7 @@ h1 {
   padding-top: 20px;
   text-align: center;
   font-family: Optimus, serif;
-  color: whitesmoke;
+  color: rgb(5, 4, 62);
 }
 
 .champImg {
@@ -147,7 +142,7 @@ h1 {
 .champName {
   text-align: center;
 
-  color: white;
+  color: rgb(5, 4, 62);
 
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
@@ -185,18 +180,23 @@ body {
   position: relative;
   min-height: 150vh;
   overflow-x: hidden;
-  background-image: url("../images/StoneSlab1.jpg"),
-    url("../images/StoneSlab2.jpg"), url("../images/StoneSlab3.jpg");
-  background-repeat: round round, space no-repeat, no-repeat;
-  background-size: 10% calc(1907px * 0.1);
+  background-image: url("../images/background.svg");
+  /* background-image: url("../images/StoneSlab1.jpg"), */
+  /* url("../images/StoneSlab2.jpg"), url("../images/StoneSlab3.jpg"); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-size: 10% calc(1907px * 0.1); */
 }
 
 .webp.Page {
   position: relative;
   min-height: 150vh;
-  background-image: url("../images/StoneSlab123.jpg");
-  background-repeat: repeat;
-  background-size: 5% calc(1907px * 0.05);
+  background-image: url("../images/background.svg");
+  background-color: purple;
+  /* background-image: url("../images/StoneSlab123.jpg"); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-size: 5% calc(1907px * 0.05); */
 }
 
 .traitText {
