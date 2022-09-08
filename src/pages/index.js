@@ -287,7 +287,8 @@ export default function Home() {
           <p>
             I will redo the theme of the website for the new version when I find
             the time, for now I just added the new champions and traits and
-            removed the old.
+            removed the old. If the new champions and traits do not show up
+            refresh the page and it should be there.
           </p>
         </header>
 
