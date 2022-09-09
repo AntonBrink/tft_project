@@ -72,7 +72,7 @@ export const Comps2 = [
     champions: [
       "Zippy",
       "Nomsy",
-      "Syfen",
+      "Sy'fen",
       "Idas",
       "Daeja",
       "Shi Oh Yu",
@@ -251,7 +251,7 @@ export const Comps2 = [
     name: "Whispers",
     img: "Whispers.png",
     compsize: 8,
-    champions: ["Zyra", "Sylas", "Pantheon", "Syfen"],
+    champions: ["Zyra", "Sylas", "Pantheon", "Sy'fen"],
   },
   {
     id: 28,
