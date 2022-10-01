@@ -180,7 +180,7 @@ body {
   position: relative;
   min-height: 150vh;
   overflow-x: hidden;
-  background-image: url("../images/background.png");
+  background-image: url("../images/background2.png");
   /* background-image: url("../images/StoneSlab1.jpg"), */
   /* url("../images/StoneSlab2.jpg"), url("../images/StoneSlab3.jpg"); */
   background-repeat: no-repeat;
@@ -191,7 +191,7 @@ body {
 .webp.Page {
   position: relative;
   min-height: 150vh;
-  background-image: url("../images/background.png");
+  background-image: url("../images/background2.webp");
   /* background-image: url("../images/StoneSlab123.jpg"); */
   background-repeat: no-repeat;
   background-size: cover;
