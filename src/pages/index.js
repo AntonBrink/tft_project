@@ -285,9 +285,7 @@ export default function Home() {
             complete.
           </p>
           <p>
-            I made some visual updates, I will look into making it look better
-            when I find the time. If the new champions and traits do not show up
-            refresh the page and it should be there.
+            I will have the website updated to the newest version by next week monday the 12th of december.
           </p>
         </header>
 
