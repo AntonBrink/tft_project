@@ -285,7 +285,9 @@ export default function Home() {
             complete.
           </p>
           <p>
-            I will have the website updated to the newest version by next week monday the 12th of december.
+            I can't give a date the site will be ready for the new patch. There always used to be a TFT traits overview image posted in the TFT news section.
+            It has not been posted this season, without this image I have no way of getting the images for the champions and building the site, as far as I know. 
+            With only text it would not be the same, whenever and if that picture does get posted, I will use it and update the site, otherwise I will hope next season they post it.
           </p>
         </header>
 
